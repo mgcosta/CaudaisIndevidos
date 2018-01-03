@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:text="Registar Localização"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spRua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/nPorta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spRua"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/textView4"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spLocal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/nPorta"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/carta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/nPorta"
+        android:layout_below="@+id/spLocal"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <CheckBox
+        android:id="@+id/checkBoxC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/spLocal"
+        android:layout_below="@+id/carta"
+        android:layout_marginTop="31dp"
+        android:text="Cliente presente"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/ref"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/labelRef"
+        android:layout_below="@+id/labelRef"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/labelRef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/checkBoxC"
+        android:layout_below="@+id/checkBoxC"
+        android:layout_marginTop="28dp"
+        android:text="Pontos de Referência"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnAr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnAa"
+        android:layout_alignEnd="@+id/btnAa"
+        android:layout_alignStart="@+id/btnAa"
+        android:layout_marginBottom="12dp"
+        android:text="Águas Residuais" />
+
+    <Button
+        android:id="@+id/btnAa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:text="Abastecimento Água" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/nPorta"
+        android:layout_alignBottom="@+id/nPorta"
+        android:layout_alignStart="@+id/spRua"
+        android:text="  Nº Porta"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/carta"
+        android:layout_alignBottom="@+id/carta"
+        android:layout_alignEnd="@+id/textView4"
+        android:text="CartaSig"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
