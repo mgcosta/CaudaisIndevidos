@@ -5,18 +5,18 @@ package a030308.caudaisindevidos;
  */
 
 class User {
-    int id;
+    int _id;
 
     String name, email, uname,pass;
 
     public void setId(int id)
     {
-        this.id = id;
+        this._id = id;
     }
 
     public int getId()
     {
-        return this.id;
+        return this._id;
     }
 
     public void setName(String name)
