@@ -1,11 +1,10 @@
 package a030308.caudaisindevidos;
 
 /**
- * Created by a030308 on 03/01/2018.
+ * Created by marcia on 08-01-2018.
  */
 
-public class User {
-
+class User {
     int id;
 
     String name, email, uname,pass;
@@ -59,6 +58,5 @@ public class User {
     {
         return this.pass;
     }
-
 
 }

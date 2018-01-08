@@ -18,8 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".WelcomeActivity" />
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".Main3Activity" />
+        <activity android:name=".Main4Activity"></activity>
     </application>
 
 </manifest>
