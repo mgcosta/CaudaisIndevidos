@@ -104,4 +104,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         dbHelper.close();
 
     }
+
+    public int searchUserId(String uname) {
+
+        dbHelper = this.getReadableDatabase();
+        String query = "select uname, _id from "+ "users";
+        Cursor c = dbHelper.rawQuery(query, null);
+        String a;
+        int b;
+        b = 0;
+        if(c.moveToFirst())
+        {
+            do{
+                a= c.getString(0);
+                if(a.equals(uname))
+                {
+                    b=c.getInt(1);
+                    break;
+                }
+            }
+            while(c.moveToNext());
+            c.close();
+        }
+        return b;
+    }
+
+
+    public Long insertVistoria(Vistoria i) {
+
+        dbHelper = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("rua", i.getRua());
+        values.put("porta", i.getPorta());
+        values.put("localidade", i.getLocalidade());
+        values.put("clientePresente", i.getClientePresente());
+        values.put("anomalia", i.getAnomalia());
+        values.put("bombagem", i.getBombagem());
+        values.put("ligado", i.getLigado());
+        values.put("tamponamento", i.getTamponamento());
+        values.put("estado", i.getEstado());
+        values.put("created_By", i.getUserId());
+
+        Long id = dbHelper.insert("vistorias", null, values);
+        dbHelper.close();
+        return id;
+    }
 }

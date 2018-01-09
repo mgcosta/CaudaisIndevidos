@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 public class Main3Activity extends Activity {
 
-    protected Button btnVistoria;
+    protected Button btnVistoria , btnExportar;
     protected String user;
 
 
@@ -25,8 +25,9 @@ public class Main3Activity extends Activity {
             Toast temp = Toast.makeText(Main3Activity.this, "Welcome " +  user, Toast.LENGTH_SHORT);
             temp.show();
             btnVistoria = (Button) findViewById(R.id.btnVistoria);
+            btnExportar = (Button) findViewById(R.id.btnExp)  ;
 
-        btnVistoria.setOnClickListener(new View.OnClickListener() {
+            btnVistoria.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v)
                 {
                     Intent i = new Intent(Main3Activity.this, Main4Activity.class);
@@ -34,6 +35,17 @@ public class Main3Activity extends Activity {
                     startActivity(i);
                 }
             });
+
+            btnExportar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+
+            }
+        });
+
+
+
+
 
 
         }
