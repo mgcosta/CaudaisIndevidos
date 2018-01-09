@@ -13,9 +13,10 @@
         android:text="Vistoria"
         tools:layout_editor_absoluteX="256dp"
         tools:layout_editor_absoluteY="222dp"
-        android:layout_above="@+id/btnExp"
-        android:layout_alignEnd="@+id/btnExp"
-        android:layout_marginBottom="118dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="104dp" />
 
     <Button
         android:id="@+id/btnExp"
@@ -24,8 +25,17 @@
         android:text="Exportar"
         tools:layout_editor_absoluteX="253dp"
         tools:layout_editor_absoluteY="302dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="311dp" />
+        android:layout_below="@+id/btnVistoria"
+        android:layout_alignStart="@+id/btnVistoria"
+        android:layout_marginTop="80dp" />
+
+    <Button
+        android:id="@+id/btnListar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Listar Vistorias"
+        android:layout_alignTop="@+id/btnExp"
+        android:layout_alignStart="@+id/btnExp"
+        android:layout_marginTop="99dp" />
 
 </RelativeLayout>

@@ -7,6 +7,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by marcia on 08-01-2018.
@@ -149,4 +152,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         dbHelper.close();
         return id;
     }
+
+
+
+
 }
