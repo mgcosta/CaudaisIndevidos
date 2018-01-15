@@ -5,19 +5,19 @@
     android:orientation="vertical">
 
     <Spinner
-        android:id="@+id/spRua"
+        android:id="@+id/oSpRua"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="36dp" />
+        android:layout_marginStart="26dp" />
 
     <EditText
-        android:id="@+id/nPorta"
+        android:id="@+id/oNPorta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spRua"
+        android:layout_below="@+id/oSpRua"
         android:layout_marginStart="17dp"
         android:layout_marginTop="16dp"
         android:layout_toEndOf="@+id/textView4"
@@ -25,101 +25,104 @@
         android:inputType="textPersonName" />
 
     <Spinner
-        android:id="@+id/spLoc"
+        android:id="@+id/oSpLoc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView4"
-        android:layout_below="@+id/nPorta"
-        android:layout_marginTop="15dp" />
+        android:layout_below="@+id/oNPorta"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="11dp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/nPorta"
-        android:layout_alignBottom="@+id/nPorta"
-        android:layout_alignStart="@+id/spRua"
+        android:layout_alignBaseline="@+id/oNPorta"
+        android:layout_alignBottom="@+id/oNPorta"
+        android:layout_alignStart="@+id/oSpRua"
         android:text="  Nº Porta"
         android:textStyle="bold" />
 
     <CheckBox
-        android:id="@+id/cbClient"
+        android:id="@+id/oCbClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/spLoc"
-        android:layout_below="@+id/spLoc"
+        android:layout_alignStart="@+id/oSpLoc"
+        android:layout_below="@+id/oSpLoc"
         android:layout_marginTop="29dp"
         android:text="Cliente Presente" />
 
     <CheckBox
-        android:id="@+id/cbCrlE"
+        android:id="@+id/oCbCrlE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/nPorta"
-        android:layout_alignTop="@+id/cbClient"
+        android:layout_alignEnd="@+id/oNPorta"
+        android:layout_alignTop="@+id/oCbClient"
         android:layout_marginEnd="24dp"
         android:text="Existe CRL" />
 
     <CheckBox
-        android:id="@+id/cbTP"
+        android:id="@+id/oCbTP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/cbLig"
-        android:layout_below="@+id/cbLig"
+        android:layout_alignStart="@+id/oCbLig"
+        android:layout_below="@+id/oCbLig"
         android:layout_marginTop="21dp"
         android:text="Tamponamento Possivel" />
 
     <CheckBox
-        android:id="@+id/cbBb"
+        android:id="@+id/oCbBb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/cbClient"
-        android:layout_below="@+id/cbClient"
+        android:layout_alignStart="@+id/oCbClient"
+        android:layout_below="@+id/oCbClient"
         android:layout_marginTop="22dp"
         android:text="Necessita Bombagem" />
 
     <CheckBox
-        android:id="@+id/cbLig"
+        android:id="@+id/oCbLig"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/cbBb"
-        android:layout_below="@+id/cbBb"
+        android:layout_alignStart="@+id/oCbBb"
+        android:layout_below="@+id/oCbBb"
         android:layout_marginTop="18dp"
         android:text="Saneamento Ligado" />
 
     <CheckBox
-        android:id="@+id/cbFoto"
+        android:id="@+id/oCbFoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/cbTP"
-        android:layout_below="@+id/cbTP"
-        android:layout_marginTop="17dp"
+        android:layout_alignBaseline="@+id/oCbTP"
+        android:layout_alignBottom="@+id/oCbTP"
+        android:layout_marginStart="66dp"
+        android:layout_toEndOf="@+id/oCbTP"
         android:text="Fotos" />
 
     <Spinner
-        android:id="@+id/spEst"
+        android:id="@+id/oSpEst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/cbFoto"
-        android:layout_below="@+id/cbFoto"
-        android:layout_marginTop="43dp" />
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/oCbTP"
+        android:layout_alignStart="@+id/oCbTP" />
 
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnUpadte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="12dp"
         android:text="Save"
-        android:layout_below="@+id/spEst"
-        android:layout_alignStart="@+id/spEst" />
+        android:layout_below="@+id/oSpEst"
+        android:layout_alignStart="@+id/oSpEst"
+        android:layout_marginStart="16dp" />
 
     <CheckBox
-        android:id="@+id/cbAno"
+        android:id="@+id/oCbAno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/cbCrlE"
+        android:layout_alignBottom="@+id/oCbCrlE"
         android:layout_marginStart="22dp"
-        android:layout_toEndOf="@+id/cbCrlE"
+        android:layout_toEndOf="@+id/oCbCrlE"
         android:text="Existe Anomalia" />
 
 </RelativeLayout>

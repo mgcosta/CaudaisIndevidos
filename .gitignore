@@ -7,4 +7,7 @@
 /build
 /captures
 .externalNativeBuild
+/app/google-services.json
+/app/src/main/java/a030308/caudaisindevidos/Main3Activity.java
+
 

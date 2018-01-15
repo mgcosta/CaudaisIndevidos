@@ -70,18 +70,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         dbHelper = this.getReadableDatabase();
         String query = "select uname, pass from users";
-
         Cursor c = dbHelper.rawQuery(query, null);
         String a,b;
-
         b = "not found";
-
         if(c.moveToFirst())
         {
             do{
                 a= c.getString(0);
-
-
                 if(a.equals(uname))
                 {
                     b=c.getString(1);
@@ -102,7 +97,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("uname", u.getUname());
         values.put("email", u.getEmail());
         values.put("pass", u.getPass());
-
         dbHelper.insert("users", null, values);
         dbHelper.close();
 
@@ -153,6 +147,64 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return id;
     }
 
+    public List<String> obterTodasVistorias(String rua) {
+        dbHelper = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        ArrayList<String> moradas = new ArrayList<String>();
+        Cursor cursor = obterTodosRegistos(rua);
+        if (cursor.moveToFirst()) {
+            do {
+                moradas.add(cursor.getString(0));
+                moradas.add(cursor.getString(1)+ cursor.getString(2)+"-" + cursor.getString(3) );
+                //moradas.add(cursor.getString(2));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return moradas;
+    }
+
+    private Cursor obterTodosRegistos(String rua) {
+        dbHelper = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        String whereClause = "rua = ?";
+        String[] whereArgs = new String[1];
+        whereArgs[0] = rua;
+
+        String[] colunas = new String[4];
+        colunas[0] = "_id";
+        colunas[1] = "rua";
+        colunas[2] = "porta";
+        colunas[3] = "localidade";
+
+        return dbHelper.query("vistorias", colunas, whereClause, whereArgs, null, null, "rua");
+    }
+
+
+
+    public String [] getItemIdByPosition(int position) {
+
+        dbHelper = this.getReadableDatabase();
+        ContentValues values = new ContentValues();
+
+        String[] vistoria = new String[11];
+
+        Cursor c = dbHelper.rawQuery("select * from " + "vistorias where _id = "+position, null);
+        c.moveToPosition(position);
+        vistoria[0] = c.getString(0);
+        vistoria[1] = c.getString(1);
+        vistoria[2] = c.getString(2);
+        vistoria[3] = c.getString(3);
+        vistoria[4] = c.getString(4);
+        vistoria[5] = c.getString(5);
+        vistoria[6] = c.getString(6);
+        vistoria[7] = c.getString(7);
+        vistoria[8] = c.getString(8);
+        vistoria[9] = c.getString(9);
+        vistoria[10] = c.getString(10);
+        vistoria[11] = c.getString(11);
+        c.close();
+        return vistoria;
+    }
 
 
 
