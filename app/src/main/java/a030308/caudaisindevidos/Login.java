@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends Activity {
+public class Login extends Activity {
     protected Button btnLogin;
     protected Button btnSignUp;
     protected DatabaseHelper db = new DatabaseHelper(this);
@@ -35,13 +35,13 @@ public class MainActivity extends Activity {
 
                 if (pwdStr.equals(password))
                 {
-                    Intent i = new Intent(MainActivity.this, Main3Activity.class);
+                    Intent i = new Intent(Login.this, Home.class);
                     i.putExtra("Username", str);
                     startActivity(i);
                 }
                 else
                 {
-                    Toast temp = Toast.makeText(MainActivity.this, "Dados Incorrectos!", Toast.LENGTH_SHORT);
+                    Toast temp = Toast.makeText(Login.this, "Dados Incorrectos!", Toast.LENGTH_SHORT);
                     temp.show();
                 }
 
@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-                Intent i = new Intent(MainActivity.this, Main2Activity.class);
+                Intent i = new Intent(Login.this, SignUp.class);
                 startActivity(i);
             }
         });

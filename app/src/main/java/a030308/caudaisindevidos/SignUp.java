@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Main2Activity extends Activity {
+public class SignUp extends Activity {
 
     protected EditText username;
     protected EditText email;
@@ -44,7 +44,7 @@ public class Main2Activity extends Activity {
             if(!pwd1Srt.equals(pwd2Srt))
             {
                 //popup msg
-                Toast pass = Toast.makeText(Main2Activity.this, "Password incorrecta!", Toast.LENGTH_SHORT);
+                Toast pass = Toast.makeText(SignUp.this, "Password incorrecta!", Toast.LENGTH_SHORT);
                 pass.show();
             }
             else
@@ -58,11 +58,11 @@ public class Main2Activity extends Activity {
 
                 db.insertUser(u);
 
-                Toast pass = Toast.makeText(Main2Activity.this, "You're Signed Up!", Toast.LENGTH_SHORT);
+                Toast pass = Toast.makeText(SignUp.this, "You're Signed Up!", Toast.LENGTH_SHORT);
                 pass.show();
 
-                //returns to MainActivity
-                Intent i = new Intent(Main2Activity.this, MainActivity.class);
+                //returns to Login
+                Intent i = new Intent(SignUp.this, Login.class);
                 startActivity(i);
             }
         }

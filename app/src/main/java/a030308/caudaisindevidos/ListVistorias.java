@@ -10,7 +10,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
-public class Main5Activity extends ListActivity {
+public class ListVistorias extends ListActivity {
     protected ArrayList<String> osItensDaLista;
     DatabaseHelper db;
 
@@ -24,7 +24,7 @@ public class Main5Activity extends ListActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        db = new DatabaseHelper(this);
+        db = new DatabaseHelper(this).open();
     }
 
     @Override
@@ -45,6 +45,6 @@ public class Main5Activity extends ListActivity {
     public void onListItemClick(ListView parent, View v, int position, long id) {
         Toast.makeText(this, osItensDaLista.get(position), Toast.LENGTH_LONG).show();
         // finish();
-        executarOutraActivity(Main6Activity.class, osItensDaLista.get(position));
+        executarOutraActivity(UpdateVistoria.class, osItensDaLista.get(position));
     }
 }

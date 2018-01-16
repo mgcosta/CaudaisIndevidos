@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class Main6Activity extends Activity {
+public class UpdateVistoria extends Activity {
 
     protected Spinner spRua, spLocal, spEstado;
     protected Button button;
@@ -22,7 +22,7 @@ public class Main6Activity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        db = new DatabaseHelper(this);
+
     }
 
 
@@ -30,7 +30,7 @@ public class Main6Activity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main6);
-
+        db = new DatabaseHelper(this).open();
         Intent x = getIntent();
         String aVistoria = x.getStringExtra("aVistoria");
 
@@ -39,7 +39,7 @@ public class Main6Activity extends Activity {
 
         String[] dados = db.getItemIdByPosition(id);
 
-        Toast temp1 = Toast.makeText(Main6Activity.this,
+        Toast temp1 = Toast.makeText(UpdateVistoria.this,
                 "rua " + id + dados[1], Toast.LENGTH_SHORT);
         temp1.show();
 

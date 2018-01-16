@@ -1,7 +1,6 @@
 package a030308.caudaisindevidos;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class Main4Activity extends Activity {
+public class InsertVistoria extends Activity {
 
     protected Spinner spRua, spLocal, spEstado;
     protected Button button;
@@ -106,12 +105,12 @@ public class Main4Activity extends Activity {
                 arguments[10] = user;
 
                 if (rua.equals("Seleccionar rua...")) {
-                    Toast temp = Toast.makeText(Main4Activity.this,
+                    Toast temp = Toast.makeText(InsertVistoria.this,
                             "Seleccione uma rua por favor!", Toast.LENGTH_SHORT);
                     temp.show();
                 }
                 if (localidade.equals("Seleccionar localidade...")) {
-                    Toast temp = Toast.makeText(Main4Activity.this,
+                    Toast temp = Toast.makeText(InsertVistoria.this,
                             "Seleccione uma localidade por favor!", Toast.LENGTH_SHORT);
                     temp.show();
                 } else {
@@ -167,11 +166,11 @@ public class Main4Activity extends Activity {
             userId = Integer.parseInt(finalString[0]);
             uInt = Integer.parseInt(finalString[1]);
 
-            Toast temp1 = Toast.makeText(Main4Activity.this,
+            Toast temp1 = Toast.makeText(InsertVistoria.this,
                     "Vistoria registada com sucesso!", Toast.LENGTH_SHORT);
             temp1.show();
 
-            Intent ar = new Intent(Main4Activity.this, Main3Activity.class);
+            Intent ar = new Intent(InsertVistoria.this, Home.class);
             Bundle extras = new Bundle();
             extras.putInt("EXTRA_USERID",userId);
             extras.putInt("EXTRA_INSPID",uInt);
