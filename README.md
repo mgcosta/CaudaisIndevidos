@@ -10,7 +10,7 @@ Aplicacao Android para tablet, que permite registar inspecções de caudais inde
 * Autenticação
 * Registo de inspecção em base de dados local
 * Consulta/update de inspecções realizadas
-* Exportação da base de dados para excel  e envio para a cloud
+* Backup da base de dados para a cloud
 
 
 
