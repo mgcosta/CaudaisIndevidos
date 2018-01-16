@@ -3,7 +3,6 @@ package a030308.caudaisindevidos;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -24,7 +23,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main3Activity extends Activity {
+public class Home extends Activity {
 
     protected Button btnVistoria, btnListar, btnBack;
     protected Spinner spRua;
@@ -40,19 +39,30 @@ public class Main3Activity extends Activity {
     }
 
 
-
     @Override
     protected void onStart() {
         super.onStart();
-        // Toast.makeText(this, "InspecçãoActivity onStart()", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Home onStart()", Toast.LENGTH_SHORT).show();
         db = new DatabaseHelper(this);
+    }
+
+    @Override
+    protected void onResume(){
+        Toast.makeText(this, "Home onResume()", Toast.LENGTH_SHORT).show();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause(){
+        Toast.makeText(this, "Home onPause()", Toast.LENGTH_SHORT).show();
+        super.onPause();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-
+        db = new DatabaseHelper(this);
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
         Context ctx = this; // for Activity, or Service. Otherwise simply get the context.
@@ -62,7 +72,7 @@ public class Main3Activity extends Activity {
         Intent oIntent = getIntent();
         user = oIntent.getStringExtra("Username");
 
-        Toast temp = Toast.makeText(Main3Activity.this, "Welcome " +  user, Toast.LENGTH_SHORT);
+        Toast temp = Toast.makeText(Home.this, "Welcome " +  user, Toast.LENGTH_SHORT);
         temp.show();
 
         spRua = (Spinner) findViewById(R.id.spRuaL);
@@ -82,7 +92,7 @@ public class Main3Activity extends Activity {
         btnVistoria.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
             {
-                Intent i = new Intent(Main3Activity.this, Main4Activity.class);
+                Intent i = new Intent(Home.this, InsertVistoria.class);
                 i.putExtra("Username", user);
                 startActivity(i);
             }
@@ -93,8 +103,8 @@ public class Main3Activity extends Activity {
                 String rua = spRua.getSelectedItem().toString();
                 List<String> asVistorias;
                 asVistorias=db.obterTodasVistorias(rua);
-                executarOutraActivity(Main5Activity.class, (ArrayList)asVistorias);
-                Toast temp1 = Toast.makeText(Main3Activity.this, "" , Toast.LENGTH_SHORT);
+                executarOutraActivity(ListVistorias.class, (ArrayList)asVistorias);
+                Toast temp1 = Toast.makeText(Home.this, "" , Toast.LENGTH_SHORT);
                 temp1.show();
             }
         });
@@ -123,7 +133,7 @@ public class Main3Activity extends Activity {
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                              //Get a URL to the uploaded content
                             // Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                            Toast temp1 = Toast.makeText(Main3Activity.this, "File Uploaded!", Toast.LENGTH_SHORT);
+                            Toast temp1 =  Toast.makeText(Home.this, "File Uploaded!", Toast.LENGTH_SHORT);
                             temp1.show();
                         }
                     })
@@ -131,7 +141,7 @@ public class Main3Activity extends Activity {
                         @Override
                         public void onFailure(@NonNull Exception exception) {
                             // Handle unsuccessful uploads
-                           // Toast temp = Toast.makeText(Main3Activity.this, "File Not Uploaded!", Toast.LENGTH_SHORT);
+                           // Toast temp = Toast.makeText(Home.this, "File Not Uploaded!", Toast.LENGTH_SHORT);
                             //temp.show();
                         }
                     });
