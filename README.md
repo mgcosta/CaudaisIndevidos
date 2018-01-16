@@ -2,7 +2,8 @@
 Caudais Indevidos
 =================
 ## Objectivo
-Aplicacao Android para tablet, que permite registar inspecções de caudais indevidos, destinada a empresas de Gestão de Abastecimento de Água e Drenagem de Águas Residuais.
+Aplicacao Android para tablet, que permite registar inspecções de caudais indevidos, destinada
+a empresas de Gestão de Abastecimento de Água e Drenagem de Águas Residuais.
 
 
 ## Funcionalidades

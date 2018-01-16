@@ -154,9 +154,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = obterTodosRegistos(rua);
         if (cursor.moveToFirst()) {
             do {
-                moradas.add(cursor.getString(0));
-                moradas.add(cursor.getString(1)+ cursor.getString(2)+"-" + cursor.getString(3) );
-                //moradas.add(cursor.getString(2));
+                moradas.add(cursor.getString(0) );
+                moradas.add(cursor.getString(1)+ " - "+ cursor.getString(2)+"-" + cursor.getString(3));
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -180,32 +179,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
-    public String [] getItemIdByPosition(int position) {
-
-        dbHelper = this.getReadableDatabase();
-        ContentValues values = new ContentValues();
-
-        String[] vistoria = new String[11];
-
-        Cursor c = dbHelper.rawQuery("select * from " + "vistorias where _id = "+position, null);
-        c.moveToPosition(position);
-        vistoria[0] = c.getString(0);
-        vistoria[1] = c.getString(1);
-        vistoria[2] = c.getString(2);
-        vistoria[3] = c.getString(3);
-        vistoria[4] = c.getString(4);
-        vistoria[5] = c.getString(5);
-        vistoria[6] = c.getString(6);
-        vistoria[7] = c.getString(7);
-        vistoria[8] = c.getString(8);
-        vistoria[9] = c.getString(9);
-        vistoria[10] = c.getString(10);
-        vistoria[11] = c.getString(11);
-        c.close();
-        return vistoria;
-    }
-
-
-
+        public String[] getAVistoria(String aVistoria) {
+            String[] colunas = new String[3];
+            String whereClause = "_id = ?";
+            String[] whereArgs = new String[1];
+            whereArgs[0] = aVistoria;
+            Cursor c = dbHelper.query("vistorias", null, whereClause, whereArgs, null, null, null);
+            c.moveToFirst();
+            colunas[0] = c.getString(1);
+            colunas[1] = c.getString(2);
+            colunas[2] = c.getString(3);
+            return colunas;
+        }
 }

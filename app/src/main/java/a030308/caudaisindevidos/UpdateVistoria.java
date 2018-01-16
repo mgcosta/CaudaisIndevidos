@@ -34,13 +34,11 @@ public class UpdateVistoria extends Activity {
         Intent x = getIntent();
         String aVistoria = x.getStringExtra("aVistoria");
 
-        int id = Integer.parseInt(aVistoria);
 
-
-        String[] dados = db.getItemIdByPosition(id);
+        String[]dados = db.getAVistoria(aVistoria);
 
         Toast temp1 = Toast.makeText(UpdateVistoria.this,
-                "rua " + id + dados[1], Toast.LENGTH_SHORT);
+                "rua "+ dados[3], Toast.LENGTH_SHORT);
         temp1.show();
 
         spRua = (Spinner) findViewById(R.id.oSpRua);

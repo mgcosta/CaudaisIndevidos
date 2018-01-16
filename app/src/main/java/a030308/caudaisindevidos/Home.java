@@ -57,12 +57,17 @@ public class Home extends Activity {
         Toast.makeText(this, "Home onPause()", Toast.LENGTH_SHORT).show();
         super.onPause();
     }
+    protected void onStop(){
+        super.onStop();
+        // Toast.makeText(this, "Home onStop()", Toast.LENGTH_SHORT).show();
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        db = new DatabaseHelper(this);
+        db = new DatabaseHelper(this).open();
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
         Context ctx = this; // for Activity, or Service. Otherwise simply get the context.
@@ -72,8 +77,7 @@ public class Home extends Activity {
         Intent oIntent = getIntent();
         user = oIntent.getStringExtra("Username");
 
-        Toast temp = Toast.makeText(Home.this, "Welcome " +  user, Toast.LENGTH_SHORT);
-        temp.show();
+
 
         spRua = (Spinner) findViewById(R.id.spRuaL);
 
