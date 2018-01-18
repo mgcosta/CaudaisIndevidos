@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="a030308.caudaisindevidos.Home">
+
+    <Button
+        android:id="@+id/btnVistoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/txtListar"
+        android:layout_marginTop="36dp"
+        android:text="Vistoria"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="143dp" />
+
+    <Spinner
+        android:id="@+id/spRuaL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtListar"
+        android:layout_below="@+id/txtListar"
+        android:layout_marginTop="23dp" />
+
+    <TextView
+        android:id="@+id/txtListar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnVistoria"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="38dp"
+        android:text="Listar Vistorias"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle" />
+
+    <Button
+        android:id="@+id/btnListar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/spRuaL"
+        android:layout_below="@+id/spRuaL"
+        android:layout_marginTop="48dp"
+        android:text="Listar" />
+
+    <Button
+        android:id="@+id/btnBackup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnListar"
+        android:layout_below="@+id/btnListar"
+        android:layout_marginTop="70dp"
+        android:text="Button" />
+
+</RelativeLayout>

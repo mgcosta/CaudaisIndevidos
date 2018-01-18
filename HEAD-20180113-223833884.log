@@ -1,0 +1,3 @@
+log: Error executing '--branches --remotes --max-count=2000 --pretty=format:%x01%x01%H%x02%ct%x02%an%x02%at%x02%ae%x02%cn%x02%ce%x02%P%x02%s%x02%b%x02%B%x02%d%x03%x03 --encoding=UTF-8 --decorate=full --': Windows error 2:
+O sistema não conseguiu localizar o ficheiro especificado.
+

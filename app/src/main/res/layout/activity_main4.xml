@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Spinner
+        android:id="@+id/spRua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="92dp" />
+
+    <EditText
+        android:id="@+id/nPorta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spRua"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/textView4"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spLoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/nPorta"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/nPorta"
+        android:layout_alignBottom="@+id/nPorta"
+        android:layout_alignStart="@+id/spRua"
+        android:text="  Nº Porta"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/cbClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/spLoc"
+        android:layout_below="@+id/spLoc"
+        android:layout_marginTop="29dp"
+        android:text="Cliente Presente" />
+
+    <CheckBox
+        android:id="@+id/cbCrlE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/nPorta"
+        android:layout_alignTop="@+id/cbClient"
+        android:layout_marginEnd="24dp"
+        android:text="Existe CRL" />
+
+    <CheckBox
+        android:id="@+id/cbTP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/cbLig"
+        android:layout_below="@+id/cbLig"
+        android:layout_marginTop="21dp"
+        android:text="Tamponamento Possivel" />
+
+    <CheckBox
+        android:id="@+id/cbBb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/cbClient"
+        android:layout_below="@+id/cbClient"
+        android:layout_marginTop="22dp"
+        android:text="Necessita Bombagem" />
+
+    <CheckBox
+        android:id="@+id/cbLig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/cbBb"
+        android:layout_below="@+id/cbBb"
+        android:layout_marginTop="18dp"
+        android:text="Saneamento Ligado" />
+
+    <CheckBox
+        android:id="@+id/cbFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/cbTP"
+        android:layout_alignBottom="@+id/cbTP"
+        android:layout_marginStart="66dp"
+        android:layout_toEndOf="@+id/cbTP"
+        android:text="Fotos" />
+
+    <Spinner
+        android:id="@+id/spEst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/cbTP"
+        android:layout_below="@+id/cbTP"
+        android:layout_marginTop="30dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/spEst"
+        android:layout_below="@+id/spEst"
+        android:layout_marginTop="20dp"
+        android:text="Save" />
+
+    <CheckBox
+        android:id="@+id/cbAno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cbCrlE"
+        android:layout_marginStart="22dp"
+        android:layout_toEndOf="@+id/cbCrlE"
+        android:text="Existe Anomalia" />
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">CaudaisIndevidos</string>
+
+    <string-array name="ruas_array">
+        <item>Seleccionar rua...</item>
+        <item>Escadas D Além do Rio</item>
+        <item>Gaveto D Além do Rio</item>
+        <item>Largo do Bêto</item>
+        <item>Rua do Depósito</item>
+        <item>Gaveto da Várzea</item>
+        <item>Gaveto do Outeiro</item>
+        <item>Rua de Pinheiral</item>
+        <item>Rua do Fijô</item>
+        <item>Rua do Alto do Gerês</item>
+        <item>Beco do Alto</item>
+        <item>Travessa de Fijó</item>
+        <item>Gaveto Fundo de Vila</item>
+        <item>Rampa do Alto A</item>
+        <item>Rua do Anjo da Guarda</item>
+        <item>Rampa de Valinhas</item>
+    </string-array>
+
+    <string-array name="estado_array">
+        <item>Seleccione Estado...</item>
+        <item>Bom</item>
+        <item>Mau</item>
+    </string-array>
+
+    <string-array name="localidades_array">
+        <item>Seleccionar localidade...</item>
+        <item>Arreigada</item>
+        <item>Carvalhosa</item>
+        <item>Codessos</item>
+        <item>Eiriz</item>
+        <item>Ferreira</item>
+        <item>Figueiró</item>
+        <item>Frazão</item>
+        <item>Freamunde</item>
+        <item>Lamoso</item>
+        <item>Meixomil</item>
+        <item>Modelos</item>
+        <item>Paços de Ferreira</item>
+        <item>Sanfins de Ferreira</item>
+        <item>Raimonda</item>
+        <item>Seroa</item>
+    </string-array>
+
+</resources>
