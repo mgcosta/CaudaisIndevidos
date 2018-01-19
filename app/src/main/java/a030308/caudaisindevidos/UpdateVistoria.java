@@ -113,10 +113,10 @@ public class UpdateVistoria extends Activity {
 
         CheckBox temp = box;
 
-        if(data.equals(null)) {
-            box.setChecked(false);
-        }else
+        if(data.equals("Sim")) {
             box.setChecked(true);
+        }else
+            box.setChecked(false);
         return;
     }
 
