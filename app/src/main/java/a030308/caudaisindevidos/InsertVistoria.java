@@ -40,7 +40,7 @@ public class InsertVistoria extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
-        db.open();
+        db = new DatabaseHelper(this).open();
         Intent oIntent = getIntent();
         user = oIntent.getStringExtra("Username");
 
