@@ -217,4 +217,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public Long updateVistoria(Vistoria i) {
+        dbHelper = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        String whereClause = "_id = ?";
+        String[] whereArgs = new String[1];
+        whereArgs[0] =""+i._id;
+        values.put("rua", i.getRua());
+        values.put("porta", i.getPorta());
+        values.put("localidade", i.getLocalidade());
+        values.put("clientePresente", i.getClientePresente());
+        values.put("crl", i.getCrl());
+        values.put("bombagem", i.getBombagem());
+        values.put("tamponamento", i.getTamponamento());
+        values.put("anomalia", i.getAnomalia());
+        values.put("estado", i.getEstado());
+        values.put("ligado", i.getLigado());
+        values.put("fotos", i.getFotos());
+
+        dbHelper.update("vistorias", values, whereClause,whereArgs);
+        dbHelper.close();
+        return null;
+
+
+
+    }
 }

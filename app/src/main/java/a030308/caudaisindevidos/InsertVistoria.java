@@ -37,7 +37,6 @@ public class InsertVistoria extends Activity {
 
         Intent oIntent = getIntent();
         user = oIntent.getStringExtra("Username");
-        
 
         spRua = (Spinner) findViewById(R.id.spRua);
         spLocal =  (Spinner) findViewById(R.id.spLoc);
