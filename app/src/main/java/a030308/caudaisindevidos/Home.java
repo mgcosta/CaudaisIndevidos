@@ -42,6 +42,12 @@ public class Home extends Activity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        db.close();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
@@ -54,8 +60,7 @@ public class Home extends Activity {
         Intent oIntent = getIntent();
         user = oIntent.getStringExtra("Username");
 
-        Toast temp = Toast.makeText(Home.this, "Welcome " +  user, Toast.LENGTH_SHORT);
-        temp.show();
+
 
         spRua = (Spinner) findViewById(R.id.spRuaL);
 
@@ -86,8 +91,7 @@ public class Home extends Activity {
                 List<String> asVistorias;
                 asVistorias=db.obterTodasVistorias(rua);
                 executarOutraActivity(ListVistorias.class, (ArrayList)asVistorias);
-                Toast temp1 = Toast.makeText(Home.this, "" , Toast.LENGTH_SHORT);
-                temp1.show();
+
             }
         });
 
@@ -117,6 +121,7 @@ public class Home extends Activity {
                             //Uri downloadUrl = taskSnapshot.getDownloadUrl();
                             Toast temp1 = Toast.makeText(Home.this, "File Uploaded!", Toast.LENGTH_SHORT);
                             temp1.show();
+
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

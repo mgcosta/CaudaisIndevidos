@@ -193,7 +193,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public String[] getAVistoria(String aVistoria) {
-        dbHelper = this.getWritableDatabase();
+        dbHelper = this.getReadableDatabase();
         ContentValues values = new ContentValues();
         String[] colunas = new String[12];
         String whereClause = "_id = ?";

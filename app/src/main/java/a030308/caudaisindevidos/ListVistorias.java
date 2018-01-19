@@ -42,8 +42,7 @@ public class ListVistorias extends ListActivity {
     }
     @Override
     public void onListItemClick(ListView parent, View v, int position, long id) {
-        //Toast.makeText(this, osItensDaLista.get(position), Toast.LENGTH_LONG).show();
-       // finish();
-        executarOutraActivity(UpdateVistoria.class, osItensDaLista.get(position));
+
+          executarOutraActivity(UpdateVistoria.class, osItensDaLista.get(position));
     }
 }

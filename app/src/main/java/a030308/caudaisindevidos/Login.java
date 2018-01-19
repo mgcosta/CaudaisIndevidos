@@ -37,6 +37,8 @@ public class Login extends Activity {
                 {
                     Intent i = new Intent(Login.this, Home.class);
                     i.putExtra("Username", str);
+                    Toast temp = Toast.makeText(Login.this, "Welcome " +  str, Toast.LENGTH_SHORT);
+                    temp.show();
                     startActivity(i);
                 }
                 else
@@ -54,6 +56,7 @@ public class Login extends Activity {
             {
                 Intent i = new Intent(Login.this, SignUp.class);
                 startActivity(i);
+
             }
         });
 

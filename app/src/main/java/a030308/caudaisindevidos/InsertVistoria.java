@@ -31,10 +31,16 @@ public class InsertVistoria extends Activity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        db.close();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
-
+        db.open();
         Intent oIntent = getIntent();
         user = oIntent.getStringExtra("Username");
 
@@ -103,10 +109,7 @@ public class InsertVistoria extends Activity {
                 arguments[9] = checkboxChecked(cbLigado);
                 arguments[10] =checkboxChecked(cbFotos);
                 arguments[11] = user;
-                //to delete
-          Toast temp1 = Toast.makeText(InsertVistoria.this,
-                    "" +arguments[3]+arguments[4]+arguments[5]+arguments[6] +arguments[7]+arguments[9]+arguments[10] , Toast.LENGTH_SHORT);
-            temp1.show();
+
                 new AsyncGenerator().execute(arguments);
             }
             }
