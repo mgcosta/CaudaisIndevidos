@@ -145,11 +145,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("porta", i.getPorta());
         values.put("localidade", i.getLocalidade());
         values.put("clientePresente", i.getClientePresente());
-        values.put("anomalia", i.getAnomalia());
+        values.put("crl", i.getCrl());
         values.put("bombagem", i.getBombagem());
-        values.put("ligado", i.getLigado());
         values.put("tamponamento", i.getTamponamento());
+        values.put("anomalia", i.getAnomalia());
         values.put("estado", i.getEstado());
+        values.put("ligado", i.getLigado());
+        values.put("fotos", i.getFotos());
         values.put("created_By", i.getUserId());
 
         Long id = dbHelper.insert("vistorias", null, values);
@@ -165,9 +167,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = obterTodosRegistos(rua);
         if (cursor.moveToFirst()) {
             do {
-                moradas.add(cursor.getString(0));
-                moradas.add(cursor.getString(1)+ cursor.getString(2)+"-" + cursor.getString(3) );
-                //moradas.add(cursor.getString(2));
+                moradas.add(cursor.getString(0) +":"+ cursor.getString(1)+" "+ cursor.getString(2)+"-" + cursor.getString(3));
             } while (cursor.moveToNext());
         }
         cursor.close();
@@ -201,18 +201,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         whereArgs[0] = aVistoria;
         Cursor c = dbHelper.query("vistorias", null, whereClause, whereArgs, null, null, null);
         c.moveToFirst();
-        colunas[0] = c.getString(1);
-        colunas[1] = c.getString(2);
-        colunas[2] = c.getString(3);
-        colunas[3] = c.getString(4);
-        colunas[4] = c.getString(5);
-        colunas[5] = c.getString(6);
-        colunas[6] = c.getString(7);
-        colunas[7] = c.getString(8);
-        colunas[8] = c.getString(9);
-        colunas[9] = c.getString(10);
-        colunas[10] = c.getString(11);
-        colunas[11] = c.getString(12);
+        colunas[0] = c.getString(0);
+        colunas[1] = c.getString(1);
+        colunas[2] = c.getString(2);
+        colunas[3] = c.getString(3);
+        colunas[4] = c.getString(4);
+        colunas[5] = c.getString(5);
+        colunas[6] = c.getString(6);
+        colunas[7] = c.getString(7);
+        colunas[8] = c.getString(8);
+        colunas[9] = c.getString(9);
+        colunas[10] = c.getString(10);
+        colunas[11] = c.getString(11);
         return colunas;
     }
 

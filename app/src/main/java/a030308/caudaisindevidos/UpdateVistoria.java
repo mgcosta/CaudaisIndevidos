@@ -22,7 +22,7 @@ public class UpdateVistoria extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        db = new DatabaseHelper(this).open();
+        db = new DatabaseHelper(this);
     }
 
 
@@ -36,6 +36,12 @@ public class UpdateVistoria extends Activity {
 
         Intent x = getIntent();
         String aVistoria = x.getStringExtra("aVistoria");
+
+        String CurrentString = aVistoria;
+        String[] separated = CurrentString.split(":");
+        String tempVistoria = separated[0]; // this will contain _id
+
+
         spRua = (Spinner) findViewById(R.id.oSpRua);
         spLocal =  (Spinner) findViewById(R.id.oSpLoc);
         spEstado = (Spinner) findViewById(R.id.oSpEst);
@@ -49,19 +55,32 @@ public class UpdateVistoria extends Activity {
         button = (Button) findViewById(R.id.btnUpadte);
         nPort = (EditText) findViewById(R.id.oNPorta);
 
-        String[]dados = db.getAVistoria(aVistoria);
-
-        String temp = dados[5];
+        String[]dados = db.getAVistoria(tempVistoria);
 
 
 
+      /*  Toast temp1 = Toast.makeText(UpdateVistoria.this,
+                ""+dados[0] +dados[1] +dados[2]+dados[3] +dados[4]+dados[5]+dados[6]+dados[7] +dados[8]+dados[9] + dados[10]+dados[11], Toast.LENGTH_SHORT);
+        temp1.show();*/
+/*
+        String [] setNullValue = {dados[4],dados[5],dados[6],dados[7], dados[8],dados[10]};
 
-        Toast temp1 = Toast.makeText(UpdateVistoria.this,
-                ""   , Toast.LENGTH_SHORT);
-        temp1.show();
+        for (int i=0; i< setNullValue.length;i++){
 
+            if(setNullValue[i].equals("null") ){
+                dados[i+4]="Não";
+                break;
+            }
+        }*/
 
-
+        //fill checkbox according to db
+        setboxChecked(cbCliente, dados[4]);
+        setboxChecked(cbCrl, dados[5]);
+        setboxChecked(cbBomb, dados[6]);
+        setboxChecked(cbTamp, dados[7]);
+        setboxChecked(cbAnomalia, dados[8]);
+        setboxChecked(cbLigado, dados[10]);
+        setboxChecked(cbFotos, dados[11]);
 
 
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -88,7 +107,28 @@ public class UpdateVistoria extends Activity {
         // Apply the adapter to the spinner
         spEstado.setAdapter(adapterEstado);
 
+    }
+
+    private void setboxChecked(CheckBox box, String data){
+
+        CheckBox temp = box;
+
+        if(data.equals(null)) {
+            box.setChecked(false);
+        }else
+            box.setChecked(true);
+        return;
+    }
 
 
+    private String checkboxChecked(CheckBox box){
+
+        String temp = "Não";
+
+        if(box.isChecked()){
+            temp = "Sim";
+        }
+
+        return temp;
     }
 }

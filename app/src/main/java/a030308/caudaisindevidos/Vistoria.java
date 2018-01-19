@@ -121,7 +121,7 @@ public class Vistoria {
 
     public void setFotos(String fotos)
     {
-        this.ligado = fotos;
+        this.fotos = fotos;
     }
 
     public String getFotos()

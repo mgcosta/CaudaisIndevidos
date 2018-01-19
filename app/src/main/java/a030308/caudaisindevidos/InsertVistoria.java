@@ -18,7 +18,7 @@ public class InsertVistoria extends Activity {
     protected Spinner spRua, spLocal, spEstado;
     protected Button button;
     protected EditText nPort;
-    protected String user,rua, localidade, cliente, crl, anomalia,tamponamento, ligado, estado, bombagem;
+    protected String user,rua, localidade, estado;
     protected CheckBox cbCliente, cbCrl, cbTamp, cbLigado, cbBomb, cbAnomalia, cbFotos;
     DatabaseHelper db;
 
@@ -52,12 +52,6 @@ public class InsertVistoria extends Activity {
         button = (Button) findViewById(R.id.btnSave);
         nPort = (EditText) findViewById(R.id.nPorta);
 
-        cliente = "Nao";
-        crl = "Nao";
-        tamponamento = "Nao";
-        ligado = "Nao";
-        bombagem = "Nao";
-        anomalia = "Nao";
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapterRua = ArrayAdapter.createFromResource(this,
@@ -88,36 +82,34 @@ public class InsertVistoria extends Activity {
             @Override
             public void onClick(View view) {
 
-                rua = spRua.getSelectedItem().toString();
-                localidade = spLocal.getSelectedItem().toString();
-                estado = spEstado.getSelectedItem().toString();
+            rua = spRua.getSelectedItem().toString();
+            localidade = spLocal.getSelectedItem().toString();
+            estado = spEstado.getSelectedItem().toString();
 
-
-                String arguments[] = new String[11];
+            if (rua.equals("Seleccionar rua...") || localidade.equals("Seleccionar localidade...") || estado.equals("Seleccione Estado...") ) {
+                Toast temp = Toast.makeText(InsertVistoria.this,
+                        "Seleccione uma rua por favor!", Toast.LENGTH_SHORT);
+                temp.show();
+            }else {
+                String arguments[] = new String[12];
                 arguments[0] = rua;
                 arguments[1] = nPort.getText().toString();
                 arguments[2] = localidade;
-                arguments[3] = cliente;
-                arguments[4] = crl;
-                arguments[5] = anomalia;
-                arguments[6] = bombagem;
-                arguments[7] = ligado;
-                arguments[8] = tamponamento;
-                arguments[9] = estado;
-                arguments[10] = user;
-
-                if (rua.equals("Seleccionar rua...")) {
-                    Toast temp = Toast.makeText(InsertVistoria.this,
-                            "Seleccione uma rua por favor!", Toast.LENGTH_SHORT);
-                    temp.show();
-                }
-                if (localidade.equals("Seleccionar localidade...")) {
-                    Toast temp = Toast.makeText(InsertVistoria.this,
-                            "Seleccione uma localidade por favor!", Toast.LENGTH_SHORT);
-                    temp.show();
-                } else {
-                    new AsyncGenerator().execute(arguments);
-                }
+                arguments[3] = checkboxChecked(cbCliente);
+                arguments[4] = checkboxChecked(cbCrl);
+                arguments[5] = checkboxChecked(cbBomb);
+                arguments[6] = checkboxChecked(cbTamp);
+                arguments[7] = checkboxChecked(cbAnomalia);
+                arguments[8] = estado;
+                arguments[9] = checkboxChecked(cbLigado);
+                arguments[10] =checkboxChecked(cbFotos);
+                arguments[11] = user;
+                //to delete
+          Toast temp1 = Toast.makeText(InsertVistoria.this,
+                    "" +arguments[3]+arguments[4]+arguments[5]+arguments[6] +arguments[7]+arguments[9]+arguments[10] , Toast.LENGTH_SHORT);
+            temp1.show();
+                new AsyncGenerator().execute(arguments);
+            }
             }
         });
 
@@ -140,11 +132,12 @@ public class InsertVistoria extends Activity {
             i.setLocalidade(arguments[2]);
             i.setClientePresente( arguments[3]);
             i.setCrl( arguments[4]);
-            i.setAnomalia(arguments[5]);
-            i.setBombagem(arguments[6]);
-            i.setLigado(arguments[7]);
-            i.setTamponamento(arguments[8]);
-            i.setEstado(arguments[9]);
+            i.setBombagem(arguments[5]);
+            i.setTamponamento(arguments[6]);
+            i.setAnomalia(arguments[7]);
+            i.setEstado(arguments[8]);
+            i.setLigado(arguments[9]);
+            i.setFotos(arguments[10]);
             i.setCreatedBy(userId);
 
             Long vistoria = db.insertVistoria(i);
@@ -178,7 +171,6 @@ public class InsertVistoria extends Activity {
 
             cleanForm();
 
-
         }
     }
 
@@ -197,36 +189,14 @@ public class InsertVistoria extends Activity {
 
     }
 
-    public void onCheckboxClicked(View view) {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-        // Check which checkbox was clicked
-        switch(view.getId()) {
-            case R.id.cbAno:
-                if (checked)
-                    anomalia = "Sim";
-                break;
-            case R.id.cbClient:
-                if (checked)
-                    cliente = "Sim";
-                break;
-            case R.id.cbCrlE:
-                if (checked)
-                    crl = "Sim";
-                break;
-            case R.id.cbTP:
-                if (checked)
-                    tamponamento = "Sim";
-                break;
-            case R.id.cbLig:
-                if (checked)
-                    ligado = "Sim";
-                break;
-            case R.id.cbBb:
-                if (checked)
-                    bombagem = "Sim";
-                break;
-        }
-    }
+    private String checkboxChecked(CheckBox box){
 
+        String temp = "Não";
+
+        if(box.isChecked()){
+            temp = "Sim";
+        }
+
+        return temp;
+    }
 }
