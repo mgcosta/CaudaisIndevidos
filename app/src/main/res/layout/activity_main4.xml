@@ -30,8 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView4"
         android:layout_below="@+id/nPorta"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="11dp" />
+        android:layout_marginTop="13dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -119,9 +118,21 @@
         android:id="@+id/cbAno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/cbCrlE"
-        android:layout_marginStart="22dp"
-        android:layout_toEndOf="@+id/cbCrlE"
+        android:layout_alignBaseline="@+id/cbBb"
+        android:layout_alignBottom="@+id/cbBb"
+        android:layout_alignEnd="@+id/cbFoto"
         android:text="Existe Anomalia" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="21dp"
+        android:layout_toStartOf="@+id/cbFoto"
+        android:text="Insert Vistoria"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

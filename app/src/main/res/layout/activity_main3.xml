@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnListar"
         android:layout_below="@+id/btnListar"
-        android:layout_marginTop="40dp"
-        android:text="Insert_Vistoria"
+        android:layout_marginTop="97dp"
+        android:text="Inserir Vistoria"
         tools:layout_editor_absoluteX="134dp"
         tools:layout_editor_absoluteY="143dp" />
 
@@ -50,9 +50,9 @@
         android:id="@+id/btnBackup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnVistoria"
-        android:layout_alignBottom="@+id/btnVistoria"
-        android:layout_toEndOf="@+id/txtListar"
+        android:layout_alignStart="@+id/btnVistoria"
+        android:layout_below="@+id/btnVistoria"
+        android:layout_marginTop="42dp"
         android:text="Backup_Cloud"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold" />

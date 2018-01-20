@@ -4,14 +4,13 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical">
 
-<Spinner
-    android:id="@+id/oSpRua"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentTop="true"
-    android:layout_marginStart="27dp"
-    android:layout_marginTop="92dp" />
+    <Spinner
+        android:id="@+id/oSpRua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="38dp" />
 
 <EditText
     android:id="@+id/oNPorta"
@@ -24,14 +23,13 @@ android:orientation="vertical">
     android:ems="10"
     android:inputType="textPersonName" />
 
-<Spinner
-    android:id="@+id/oSpLoc"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignStart="@+id/textView4"
-    android:layout_below="@+id/oNPorta"
-    android:layout_marginStart="11dp"
-    android:layout_marginTop="11dp" />
+    <Spinner
+        android:id="@+id/oSpLoc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/oNPorta"
+        android:layout_marginTop="20dp" />
 
 <TextView
     android:id="@+id/textView4"
@@ -115,13 +113,25 @@ android:orientation="vertical">
     android:layout_marginTop="20dp"
     android:text="Save" />
 
-<CheckBox
-    android:id="@+id/oCbAno"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignBottom="@+id/oCbCrlE"
-    android:layout_marginStart="22dp"
-    android:layout_toEndOf="@+id/oCbCrlE"
-    android:text="Existe Anomalia" />
+    <CheckBox
+        android:id="@+id/oCbAno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/oCbBb"
+        android:layout_alignBottom="@+id/oCbBb"
+        android:layout_toEndOf="@+id/textView"
+        android:text="Existe Anomalia" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Update Vistoria"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp" />
 
 </RelativeLayout>

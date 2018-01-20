@@ -164,7 +164,7 @@ public class UpdateVistoria extends Activity {
             i.setLocalidade(arguments[3]);
             i.setClientePresente( arguments[4]);
             i.setCrl( arguments[5]);
-            i.setBombagem(arguments[4]);
+            i.setBombagem(arguments[6]);
             i.setTamponamento(arguments[7]);
             i.setAnomalia(arguments[8]);
             i.setEstado(arguments[9]);

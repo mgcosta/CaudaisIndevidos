@@ -27,7 +27,7 @@
         android:layout_marginTop="42dp"
         android:fontFamily="sans-serif"
         android:text="Login"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
         android:typeface="normal" />
 
     <TextView
@@ -39,9 +39,8 @@
         android:layout_marginTop="40dp"
         android:fontFamily="serif"
         android:text="Login"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/Pass"
@@ -61,7 +60,8 @@
         android:layout_marginTop="27dp"
         android:text="Username"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/labelConfirmPass"
@@ -72,7 +72,8 @@
         android:layout_marginTop="13dp"
         android:text="Password"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnSignUp"
@@ -82,5 +83,5 @@
         android:layout_alignBottom="@+id/btnLogin"
         android:layout_alignEnd="@+id/Pass"
         android:text="Sign Up"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="@color/colorPrimaryDark" />
 </RelativeLayout>
